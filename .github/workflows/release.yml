@@ -29,6 +29,8 @@ jobs:
         run: npm install --legacy-peer-deps
 
       - name: Build Tauri (NSIS only)
+        env:
+             TAURI_SIGNING_DISABLED: "true"
         run: npm run tauri build
 
       - name: Upload NSIS artifact
